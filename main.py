@@ -8,7 +8,10 @@ def read_int(prompt, min, max):
         return a
     except AssertionError:
         print("Error: el valor no está dentro del rango permitido ("+str(min)+".."+str(max)+")")
-        
+        read_int(prompt, min, max)
+    except ValueError:
+        print("Error: entrada erronea")
+        read_int(prompt, min, max)
 
 v = read_int("Ingresa un numero entre -10 a 10: ", -10, 10)
 
